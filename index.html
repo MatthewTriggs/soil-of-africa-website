@@ -569,9 +569,19 @@ footer {
 @media (max-width: 900px) {
   .nav-links-left, .nav-links-right { display: none; }
   .nav-inner { grid-template-columns: 1fr; justify-items: center; }
+  .nav-masthead {
+    flex-direction: column; gap: 0.15rem; text-align: center;
+    padding: 0.5rem 1rem;
+  }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-col-divider { display: none; }
   .hero-col-center { height: 350px; }
+  .hero-headline-bar {
+    flex-direction: column; align-items: center; gap: 0.3rem;
+    padding: 0.75rem 1rem; font-size: 0.7rem; letter-spacing: 0.1em;
+    text-align: center;
+  }
+  .hero-headline-bar span:nth-child(2) { display: none; }
   .manifesto-columns { grid-template-columns: 1fr; }
   .manifesto-values { grid-template-columns: repeat(2, 1fr); }
   .chapters-broadsheet { grid-template-columns: repeat(2, 1fr); }
@@ -583,7 +593,6 @@ footer {
   .stand-col.no { border-right: none; border-bottom: 2px solid var(--ink); }
   .leader { border-right: none; border-bottom: 1px solid var(--ink); }
   .chapters-section, .manifesto-section, .declaration-section, .stand-section, .leadership-section, .join-section { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .nav-masthead, .hero-headline-bar { padding-left: 1.5rem; padding-right: 1.5rem; }
   .section-masthead { padding-left: 1.5rem; padding-right: 1.5rem; }
   .photo-essay-header { padding: 0 1.5rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
