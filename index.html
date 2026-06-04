@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soil of Africa — Defenders of Mother Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0F0B07;
+  --paper: #F2EBD9;
+  --paper-dark: #E0D4BC;
+  --soil: #3D1F0A;
+  --earth: #7A4A1E;
+  --gold: #C9901A;
+  --gold-bright: #E8B535;
+  --green: #1E4D2B;
+  --green-bright: #2E7544;
+  --red: #9B2218;
+  --white: #FDFAF5;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════
+   NEWSPAPER NAV
+═══════════════════════════════════ */
+.nav-masthead {
+  background: var(--ink);
+  padding: 0.4rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid var(--gold);
+}
+.masthead-left { font-size: 0.65rem; letter-spacing: 0.15em; color: rgba(242,235,217,0.5); text-transform: uppercase; }
+.masthead-right { font-size: 0.65rem; letter-spacing: 0.15em; color: rgba(242,235,217,0.5); text-transform: uppercase; }
+
+.nav-main {
+  background: var(--paper);
+  border-bottom: 2px solid var(--ink);
+  padding: 0;
+}
+.nav-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1rem 3rem;
+  gap: 2rem;
+}
+.nav-links-left, .nav-links-right {
+  display: flex; gap: 2rem; list-style: none;
+}
+.nav-links-right { justify-content: flex-end; }
+.nav-links-left a, .nav-links-right a {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none; color: var(--ink);
+  transition: color 0.2s;
+}
+.nav-links-left a:hover, .nav-links-right a:hover { color: var(--gold); }
+.nav-center { text-align: center; }
+.nav-logo-main {
+  font-family: 'Teko', sans-serif;
+  font-size: 3.5rem; font-weight: 700; line-height: 0.9;
+  color: var(--ink); text-decoration: none; display: block;
+  letter-spacing: 0.05em;
+}
+.nav-logo-sub {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--earth);
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  padding: 0.2rem 0; margin-top: 0.1rem; display: block;
+}
+
+/* ═══════════════════════════════════
+   HERO — NEWSPAPER FRONT PAGE
+═══════════════════════════════════ */
+.hero {
+  background: var(--paper);
+  padding: 0;
+  border-bottom: 3px double var(--ink);
+}
+
+.hero-headline-bar {
+  background: var(--ink);
+  color: var(--gold-bright);
+  padding: 0.6rem 3rem;
+  font-family: 'Teko', sans-serif;
+  font-size: 1rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 2px 1.4fr 2px 0.9fr;
+  min-height: 85vh;
+}
+.hero-col-divider { background: var(--ink); }
+
+/* Left col */
+.hero-col-left {
+  padding: 2.5rem 2.5rem 2.5rem 3rem;
+  display: flex; flex-direction: column; justify-content: space-between;
+  border-right: none;
+}
+.hero-issue {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--earth); margin-bottom: 1.5rem;
+}
+.hero-title-main {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 700; line-height: 0.95;
+  color: var(--ink); margin-bottom: 1.5rem;
+}
+.hero-title-main em { font-style: italic; color: var(--green); }
+.hero-drop-cap-text {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.95rem; line-height: 1.8; color: var(--ink);
+  column-count: 1;
+}
+.hero-drop-cap-text::first-letter {
+  font-family: 'Teko', sans-serif;
+  font-size: 5rem; font-weight: 700;
+  float: left; line-height: 0.8;
+  margin: 0.1rem 0.15rem 0 0;
+  color: var(--green);
+}
+.hero-byline {
+  margin-top: 2rem;
+  padding-top: 1rem; border-top: 1px solid var(--ink);
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--earth);
+}
+.hero-quote-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--ink); color: var(--gold-bright);
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.1rem; font-style: italic; line-height: 1.5;
+}
+
+/* Center col — BIG PHOTO */
+.hero-col-center {
+  position: relative; overflow: hidden;
+}
+.hero-center-img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.hero-center-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(15,11,7,0.85);
+  padding: 1rem 1.5rem;
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gold-bright);
+}
+
+/* Right col */
+.hero-col-right {
+  padding: 2.5rem 3rem 2.5rem 2.5rem;
+  display: flex; flex-direction: column; gap: 0;
+}
+.hero-story-sm { padding: 1.5rem 0; border-bottom: 1px solid rgba(15,11,7,0.2); }
+.hero-story-sm:first-child { padding-top: 0; }
+.hero-story-sm:last-child { border-bottom: none; }
+.hero-story-tag {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.hero-story-tag::before { content: ''; width: 16px; height: 2px; background: var(--red); display: inline-block; }
+.hero-story-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.3rem; font-weight: 700; line-height: 1.2;
+  color: var(--ink); margin-bottom: 0.5rem;
+}
+.hero-story-body {
+  font-size: 0.8rem; line-height: 1.7; color: rgba(15,11,7,0.7);
+}
+.hero-story-sm .story-img {
+  width: 100%; height: 130px; object-fit: cover; margin-bottom: 0.75rem;
+}
+
+/* ═══════════════════════════════════
+   TICKER / BREAKING
+═══════════════════════════════════ */
+.ticker-bar {
+  background: var(--red); color: var(--white);
+  padding: 0.6rem 0; overflow: hidden; position: relative;
+  display: flex; align-items: center;
+}
+.ticker-label {
+  background: var(--ink); color: var(--gold-bright);
+  padding: 0 1.5rem;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; white-space: nowrap; z-index: 2;
+  height: 100%; display: flex; align-items: center;
+  flex-shrink: 0;
+}
+.ticker-content {
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em;
+  padding-left: 3rem;
+}
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ═══════════════════════════════════
+   SECTION HEADERS — NEWSPAPER STYLE
+═══════════════════════════════════ */
+.section-masthead {
+  border-top: 4px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.6rem 3rem;
+  display: flex; align-items: center; gap: 1.5rem;
+  margin: 0 0 3rem 0;
+  background: var(--paper);
+}
+.section-masthead-title {
+  font-family: 'Teko', sans-serif;
+  font-size: 2rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink);
+}
+.section-masthead-rule { flex: 1; height: 1px; background: var(--ink); }
+.section-masthead-sub {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--earth);
+}
+
+/* ═══════════════════════════════════
+   PHILOSOPHY — MANIFESTO STYLE
+═══════════════════════════════════ */
+.manifesto-section {
+  background: var(--ink); color: var(--paper);
+  padding: 6rem 3rem;
+}
+.manifesto-inner { max-width: 1100px; margin: 0 auto; }
+.manifesto-eyebrow {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.manifesto-eyebrow::after { content: ''; flex: 1; height: 1px; background: rgba(201,144,26,0.3); }
+.manifesto-title {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 700; line-height: 0.85;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+  color: var(--paper);
+}
+.manifesto-title span { color: var(--gold); }
+.manifesto-title em { color: var(--green-bright); font-style: normal; }
+.manifesto-columns {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 4rem;
+}
+.manifesto-col p {
+  font-size: 0.9rem; line-height: 1.8; color: rgba(242,235,217,0.75);
+}
+.manifesto-col p strong { color: var(--paper); font-weight: 500; }
+.manifesto-values {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(242,235,217,0.15);
+  padding-top: 3rem; gap: 2rem;
+}
+.m-value { border-left: 2px solid var(--gold); padding-left: 1.25rem; }
+.m-value-num { font-family: 'Teko', sans-serif; font-size: 3rem; font-weight: 700; color: rgba(201,144,26,0.2); line-height: 1; }
+.m-value-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.m-value-desc { font-size: 0.8rem; line-height: 1.6; color: rgba(242,235,217,0.6); }
+
+/* ═══════════════════════════════════
+   PHOTO ESSAY — MAGAZINE SPREAD
+═══════════════════════════════════ */
+.photo-essay {
+  padding: 5rem 0;
+  background: var(--paper-dark);
+}
+.photo-essay-header { padding: 0 3rem; margin-bottom: 3rem; }
+.photo-essay-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-style: italic; color: var(--ink); margin-bottom: 0.5rem;
+}
+.photo-essay-subtitle {
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--earth);
+}
+.photo-mosaic {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: 320px 320px;
+  gap: 3px;
+  padding: 0 3rem;
+}
+.photo-mosaic-item { overflow: hidden; position: relative; }
+.photo-mosaic-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block; }
+.photo-mosaic-item:hover img { transform: scale(1.04); }
+.photo-mosaic-item.tall { grid-row: span 2; }
+.photo-mosaic-item.wide { grid-column: span 2; }
+.photo-num {
+  position: absolute; top: 1rem; left: 1rem;
+  font-family: 'Teko', sans-serif; font-size: 1.8rem; font-weight: 700;
+  color: rgba(255,255,255,0.6); line-height: 1;
+}
+.photo-caption-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(15,11,7,0.8));
+  font-size: 0.7rem; color: rgba(242,235,217,0.85);
+  font-weight: 500; letter-spacing: 0.05em;
+  opacity: 0; transition: opacity 0.3s;
+}
+.photo-mosaic-item:hover .photo-caption-overlay { opacity: 1; }
+
+/* ═══════════════════════════════════
+   CHAPTERS — BROADSHEET COLUMNS
+═══════════════════════════════════ */
+.chapters-section { padding: 5rem 3rem; background: var(--paper); }
+.chapters-broadsheet {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border: 1px solid var(--ink);
+}
+.chapter-col {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--ink);
+  position: relative;
+}
+.chapter-col:last-child { border-right: none; }
+.chapter-col-num {
+  font-family: 'Teko', sans-serif;
+  font-size: 5rem; font-weight: 700; line-height: 0.8;
+  color: rgba(15,11,7,0.07); margin-bottom: 1rem;
+}
+.chapter-col-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.chapter-col-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem; font-weight: 700; line-height: 1.25;
+  color: var(--ink); margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem; border-bottom: 2px solid var(--green);
+}
+.chapter-col-body {
+  font-size: 0.78rem; line-height: 1.7; color: rgba(15,11,7,0.7);
+}
+
+/* ═══════════════════════════════════
+   DECLARATION — FULL BLEED
+═══════════════════════════════════ */
+.declaration-section {
+  background: var(--green);
+  padding: 7rem 3rem;
+  position: relative; overflow: hidden;
+}
+.declaration-bg-text {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: 'Teko', sans-serif;
+  font-size: 30vw; font-weight: 700; line-height: 1;
+  color: rgba(255,255,255,0.03);
+  white-space: nowrap; pointer-events: none; user-select: none;
+}
+.declaration-inner { position: relative; z-index: 1; max-width: 900px; }
+.declaration-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(242,235,217,0.5);
+  margin-bottom: 2rem;
+}
+.declaration-lines { }
+.declaration-line {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 700; line-height: 0.9;
+  color: var(--paper); letter-spacing: 0.02em;
+  display: block;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+.declaration-line:hover { transform: translateX(1rem); }
+.declaration-line.gold { color: var(--gold-bright); }
+.declaration-line.italic {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic; font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 400; color: rgba(242,235,217,0.6);
+  letter-spacing: 0;
+}
+.declaration-divider { width: 60px; height: 3px; background: var(--gold); margin: 2rem 0; }
+.declaration-tagline {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.3rem; font-style: italic;
+  color: rgba(242,235,217,0.7); line-height: 1.6;
+  max-width: 600px;
+}
+
+/* ═══════════════════════════════════
+   STAND / NO + YES
+═══════════════════════════════════ */
+.stand-section { background: var(--paper-dark); padding: 5rem 3rem; }
+.stand-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; border: 2px solid var(--ink);
+}
+.stand-col {
+  padding: 3rem;
+}
+.stand-col.no { border-right: 2px solid var(--ink); background: var(--ink); color: var(--paper); }
+.stand-col.yes { background: var(--paper); }
+.stand-header {
+  font-family: 'Teko', sans-serif;
+  font-size: 4rem; font-weight: 700; line-height: 0.9;
+  margin-bottom: 2rem; padding-bottom: 1.5rem;
+}
+.stand-col.no .stand-header { color: #FF6B6B; border-bottom: 1px solid rgba(242,235,217,0.2); }
+.stand-col.yes .stand-header { color: var(--green); border-bottom: 1px solid var(--ink); }
+.stand-items { display: flex; flex-direction: column; gap: 0; }
+.stand-item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid;
+  font-size: 0.9rem; font-weight: 400;
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  line-height: 1.5;
+}
+.stand-col.no .stand-item { border-color: rgba(242,235,217,0.12); color: rgba(242,235,217,0.75); }
+.stand-col.yes .stand-item { border-color: rgba(15,11,7,0.12); color: rgba(15,11,7,0.75); }
+.stand-item:last-child { border-bottom: none; }
+.stand-marker { flex-shrink: 0; font-weight: 700; font-size: 0.8rem; margin-top: 0.1rem; }
+.stand-col.no .stand-marker { color: #FF6B6B; }
+.stand-col.yes .stand-marker { color: var(--green-bright); }
+
+/* ═══════════════════════════════════
+   LEADERSHIP — ROLL CALL
+═══════════════════════════════════ */
+.leadership-section { padding: 5rem 3rem; background: var(--paper); }
+.leadership-roll {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--ink); gap: 0; margin-top: 3rem;
+}
+.leader {
+  padding: 2.5rem 2rem; border-right: 1px solid var(--ink);
+  position: relative;
+}
+.leader:last-child { border-right: none; }
+.leader-ornament {
+  font-family: 'Teko', sans-serif;
+  font-size: 8rem; font-weight: 700; line-height: 0.8;
+  color: rgba(15,11,7,0.04); position: absolute; top: 0; right: 1rem;
+}
+.leader-role {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  border-left: 2px solid var(--gold); padding-left: 0.5rem;
+}
+.leader-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.35;
+}
+
+/* ═══════════════════════════════════
+   JOIN — FULL BLEED GOLD
+═══════════════════════════════════ */
+.join-section {
+  background: var(--gold);
+  padding: 7rem 3rem;
+  position: relative; overflow: hidden;
+}
+.join-bg-text {
+  position: absolute; bottom: -2rem; right: -2rem;
+  font-family: 'Teko', sans-serif;
+  font-size: 28vw; font-weight: 700; line-height: 0.8;
+  color: rgba(15,11,7,0.07);
+  pointer-events: none; user-select: none;
+}
+.join-inner { position: relative; z-index: 1; }
+.join-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(15,11,7,0.5); margin-bottom: 1.5rem;
+}
+.join-title {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 700; line-height: 0.85;
+  color: var(--ink); margin-bottom: 2rem; letter-spacing: -0.01em;
+}
+.join-sub {
+  font-size: 1.1rem; font-weight: 300; color: rgba(15,11,7,0.7);
+  max-width: 500px; line-height: 1.7; margin-bottom: 3rem;
+}
+.btn-ink {
+  background: var(--ink); color: var(--gold-bright);
+  padding: 1.1rem 3rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; text-decoration: none; display: inline-block;
+  transition: transform 0.2s, background 0.2s;
+  margin-right: 1rem;
+}
+.btn-ink:hover { background: var(--soil); transform: translateY(-2px); }
+.btn-outline-ink {
+  border: 2px solid var(--ink); color: var(--ink);
+  padding: 1.1rem 3rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; text-decoration: none; display: inline-block;
+  transition: all 0.2s;
+}
+.btn-outline-ink:hover { background: var(--ink); color: var(--gold-bright); }
+
+/* ═══════════════════════════════════
+   FOOTER — BROADSHEET FOOTER
+═══════════════════════════════════ */
+footer {
+  background: var(--ink); color: var(--paper);
+  padding: 4rem 3rem 2rem;
+}
+.footer-masthead {
+  text-align: center; padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(242,235,217,0.1);
+  margin-bottom: 3rem;
+}
+.footer-title {
+  font-family: 'Teko', sans-serif;
+  font-size: 5rem; font-weight: 700; line-height: 0.9;
+  color: var(--paper); letter-spacing: 0.05em;
+}
+.footer-subtitle {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.9rem; font-style: italic; color: var(--gold);
+  margin-top: 0.5rem;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.footer-col h4 {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold);
+  border-bottom: 1px solid rgba(201,144,26,0.3);
+  padding-bottom: 0.5rem; margin-bottom: 1rem;
+}
+.footer-col p, .footer-col li {
+  font-size: 0.82rem; font-weight: 300; color: rgba(242,235,217,0.55);
+  line-height: 1.8;
+}
+.footer-col ul { list-style: none; }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 2rem; border-top: 1px solid rgba(242,235,217,0.08);
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-copy { font-size: 0.75rem; color: rgba(242,235,217,0.3); }
+.footer-pbo { font-size: 0.7rem; color: rgba(242,235,217,0.2); }
+
+/* ═══════════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  .nav-links-left, .nav-links-right { display: none; }
+  .nav-inner { grid-template-columns: 1fr; justify-items: center; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-col-divider { display: none; }
+  .hero-col-center { height: 350px; }
+  .manifesto-columns { grid-template-columns: 1fr; }
+  .manifesto-values { grid-template-columns: repeat(2, 1fr); }
+  .chapters-broadsheet { grid-template-columns: repeat(2, 1fr); }
+  .chapter-col { border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  .photo-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; padding: 0 1.5rem; }
+  .photo-mosaic-item.tall { grid-row: auto; }
+  .photo-mosaic-item.wide { grid-column: auto; }
+  .stand-grid, .leadership-roll, .footer-grid { grid-template-columns: 1fr; }
+  .stand-col.no { border-right: none; border-bottom: 2px solid var(--ink); }
+  .leader { border-right: none; border-bottom: 1px solid var(--ink); }
+  .chapters-section, .manifesto-section, .declaration-section, .stand-section, .leadership-section, .join-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .nav-masthead, .hero-headline-bar { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .section-masthead { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .photo-essay-header { padding: 0 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD BAR -->
+<div class="nav-masthead">
+  <div class="masthead-left">Est. South Africa · PBO No: 930066493</div>
+  <div class="masthead-right">679 Tanya Street, Moreleta Park, Pretoria</div>
+</div>
+
+<!-- MAIN NAV -->
+<nav class="nav-main">
+  <div class="nav-inner">
+    <ul class="nav-links-left">
+      <li><a href="#about">About</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#chapters">Chapters</a></li>
+    </ul>
+    <div class="nav-center">
+      <a href="#" class="nav-logo-main">SOIL OF AFRICA</a>
+      <span class="nav-logo-sub">Defenders of Mother Africa</span>
+    </div>
+    <ul class="nav-links-right">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#join" style="color:var(--green);font-weight:700">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO — NEWSPAPER FRONT PAGE -->
+<section class="hero" id="about">
+  <div class="hero-headline-bar">
+    <span>2026 — Year of Activism</span>
+    <span>Unity · Dignity · Economic Liberation · Cultural Restoration</span>
+    <span>Continental Edition</span>
+  </div>
+
+  <div class="hero-grid">
+
+    <!-- LEFT COLUMN -->
+    <div class="hero-col-left">
+      <div>
+        <div class="hero-issue">Pan-African Movement · South Africa & the Diaspora</div>
+        <h1 class="hero-title-main">
+          United<br>by the<br>
+          <em>Soil</em><br>Beneath<br>Our Feet
+        </h1>
+      </div>
+      <div>
+        <p class="hero-drop-cap-text">Soil of Africa is a registered advocacy movement rooted in the sacred understanding that every person living on African soil — regardless of race, tribe, language, religion, or history — comes from one source: the Soil of Africa.</p>
+        <div class="hero-quote-box">
+          "From the Soil We Came, and Through Unity We Rise."
+        </div>
+        <div class="hero-byline">HRM King Tshepo III Ramontja · President, Soil of Africa</div>
+      </div>
+    </div>
+
+    <div class="hero-col-divider"></div>
+
+    <!-- CENTER PHOTO -->
+    <div class="hero-col-center">
+      <img src="WhatsApp_Image_2026-06-04_at_12_49_23__2_.jpeg"
+           alt="SOA mass rally at the Union Buildings, Pretoria"
+           class="hero-center-img"
+           onerror="this.style.background='#1E4D2B';this.style.minHeight='500px'">
+      <div class="hero-center-caption">Thousands rally at Church Square, Pretoria — Soil of Africa mobilises the nation.</div>
+    </div>
+
+    <div class="hero-col-divider"></div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="hero-col-right">
+      <div class="hero-story-sm">
+        <div class="hero-story-tag">Leadership</div>
+        <img src="WhatsApp_Image_2026-06-04_at_12_49_24.jpeg"
+             alt="King Tshepo" class="story-img"
+             onerror="this.style.background='#7A4A1E';this.style.minHeight='120px'">
+        <div class="hero-story-title">The Voice of a Movement</div>
+        <p class="hero-story-body">HRM King Tshepo III Ramontja leads with discipline, spirituality, and a vision for Pan-African unity that transcends race and history.</p>
+      </div>
+      <div class="hero-story-sm">
+        <div class="hero-story-tag">Community</div>
+        <img src="WhatsApp_Image_2026-06-04_at_12_49_22__1_.jpeg"
+             alt="SOA Team" class="story-img"
+             onerror="this.style.background='#3D1F0A';this.style.minHeight='120px'">
+        <div class="hero-story-title">Building Leaders at Grassroots</div>
+        <p class="hero-story-body">From rural classrooms to city squares — SOA builds leadership where people live, with chapters across South Africa.</p>
+      </div>
+      <div class="hero-story-sm">
+        <div class="hero-story-tag">Vision</div>
+        <div class="hero-story-title">"Africa is not poor. Africa is rich."</div>
+        <p class="hero-story-body">The challenge has never been a lack of resources — it has been a lack of ownership, unity, and organised leadership. SOA exists to change that.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-label">SOA Updates</div>
+  <div class="ticker-content">
+    2026 Declared Year of Activism &nbsp;✦&nbsp; Skills Development Academies launching across all provinces &nbsp;✦&nbsp; Women Chapter expanding nationally &nbsp;✦&nbsp; Youth Chapter mobilising entrepreneurs &nbsp;✦&nbsp; Community Leadership Program active in all major townships &nbsp;✦&nbsp; Pan-African Diaspora partnerships growing &nbsp;✦&nbsp; 2026 Declared Year of Activism &nbsp;✦&nbsp; Skills Development Academies launching across all provinces &nbsp;✦&nbsp; Women Chapter expanding nationally &nbsp;✦&nbsp; Youth Chapter mobilising entrepreneurs &nbsp;✦&nbsp; Community Leadership Program active in all major townships &nbsp;✦&nbsp; Pan-African Diaspora partnerships growing
+  </div>
+</div>
+
+<!-- PHILOSOPHY / MANIFESTO -->
+<section class="manifesto-section" id="philosophy">
+  <div class="manifesto-inner">
+    <div class="manifesto-eyebrow reveal">Our Philosophy</div>
+    <h2 class="manifesto-title reveal">
+      AFRICA<br>
+      <span>IS NOT</span><br>
+      <em>POOR</em>
+    </h2>
+    <div class="manifesto-columns reveal">
+      <p>Africa is rich in minerals, culture, intelligence, spirituality, agriculture, innovation, and human potential. The challenge has never been a lack of resources — it has been <strong>a lack of ownership, unity, industrialisation, and organised leadership.</strong></p>
+      <p>Soil of Africa believes that the people of Africa and the Diaspora must become <strong>owners of production, innovation, infrastructure, technology, land development, and economic systems.</strong> We advocate for empowerment that transforms villages and townships into centres of entrepreneurship.</p>
+      <p>We believe the liberation of Africa is incomplete without economic ownership, human dignity, cultural restoration, land consciousness, youth empowerment, women leadership, spiritual alignment, and <strong>Pan-African unity.</strong></p>
+    </div>
+    <div class="manifesto-values reveal">
+      <div class="m-value">
+        <div class="m-value-num">01</div>
+        <div class="m-value-name">Unity</div>
+        <div class="m-value-desc">Africa's strength lies in unity across tribes, races, nations, and generations.</div>
+      </div>
+      <div class="m-value">
+        <div class="m-value-num">02</div>
+        <div class="m-value-name">Dignity</div>
+        <div class="m-value-desc">Every human life carries sacred value deserving respect, justice, and protection.</div>
+      </div>
+      <div class="m-value">
+        <div class="m-value-num">03</div>
+        <div class="m-value-name">Ownership</div>
+        <div class="m-value-desc">African people must own industries, resources, technology, and systems of production.</div>
+      </div>
+      <div class="m-value">
+        <div class="m-value-num">04</div>
+        <div class="m-value-name">Restoration</div>
+        <div class="m-value-desc">We honour African identity, spirituality, languages, customs, and traditional leadership.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO ESSAY -->
+<section class="photo-essay" id="gallery">
+  <div class="photo-essay-header reveal">
+    <h2 class="photo-essay-title">The Movement in Action</h2>
+    <div class="photo-essay-subtitle">On the ground across South Africa — from Church Square to rural classrooms</div>
+  </div>
+  <div class="photo-mosaic reveal">
+    <div class="photo-mosaic-item tall">
+      <img src="WhatsApp_Image_2026-06-04_at_12_49_21__2_.jpeg" alt="Rally">
+      <div class="photo-num">01</div>
+      <div class="photo-caption-overlay">Mass rally — Church Square, Pretoria</div>
+    </div>
+    <div class="photo-mosaic-item">
+      <img src="WhatsApp_Image_2026-06-04_at_12_49_22.jpeg" alt="SOA team">
+      <div class="photo-num">02</div>
+      <div class="photo-caption-overlay">SOA Leadership Team</div>
+    </div>
+    <div class="photo-mosaic-item">
+      <img src="WhatsApp_Image_2026-06-04_at_12_49_18__1_.jpeg" alt="Speaking">
+      <div class="photo-num">03</div>
+      <div class="photo-caption-overlay">Addressing the community</div>
+    </div>
+    <div class="photo-mosaic-item wide">
+      <img src="WhatsApp_Image_2026-06-04_at_12_49_23__1_.jpeg" alt="Crowd rally">
+      <div class="photo-num">04</div>
+      <div class="photo-caption-overlay">Thousands gather in solidarity</div>
+    </div>
+    <div class="photo-mosaic-item">
+      <img src="WhatsApp_Image_2026-06-04_at_12_49_19.jpeg" alt="Rural meeting">
+      <div class="photo-num">05</div>
+      <div class="photo-caption-overlay">Rural community programme</div>
+    </div>
+    <div class="photo-mosaic-item">
+      <img src="WhatsApp_Image_2026-06-04_at_12_49_20__2_.jpeg" alt="Leadership">
+      <div class="photo-num">06</div>
+      <div class="photo-caption-overlay">Leadership on the steps</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="chapters-section" id="chapters">
+  <div class="section-masthead reveal">
+    <div class="section-masthead-title">Chapters of the Movement</div>
+    <div class="section-masthead-rule"></div>
+    <div class="section-masthead-sub">Six pillars. One purpose.</div>
+  </div>
+  <div class="chapters-broadsheet reveal">
+    <div class="chapter-col">
+      <div class="chapter-col-num">I</div>
+      <div class="chapter-col-icon">👑</div>
+      <div class="chapter-col-title">Traditional Leadership</div>
+      <div class="chapter-col-body">Uniting kings, queens, royal houses, priests, and traditional healers from across Africa and the Diaspora — the living institutions of African civilisation.</div>
+    </div>
+    <div class="chapter-col">
+      <div class="chapter-col-num">II</div>
+      <div class="chapter-col-icon">🌸</div>
+      <div class="chapter-col-title">Women Chapter</div>
+      <div class="chapter-col-body">Restoring dignity, safety, leadership, and economic empowerment. Fighting GBV, promoting entrepreneurship, building mentorship networks across Africa.</div>
+    </div>
+    <div class="chapter-col">
+      <div class="chapter-col-num">III</div>
+      <div class="chapter-col-icon">⚡</div>
+      <div class="chapter-col-title">Youth Chapter</div>
+      <div class="chapter-col-body">Leadership development, digital innovation, skills, entrepreneurship, and Pan-African networking. Youth are builders of today — not just tomorrow.</div>
+    </div>
+    <div class="chapter-col">
+      <div class="chapter-col-num">IV</div>
+      <div class="chapter-col-icon">🙏</div>
+      <div class="chapter-col-title">Abafundisi & Spiritual</div>
+      <div class="chapter-col-body">The moral and spiritual compass of the organisation — prayer, moral regeneration, community healing, family restoration, and peacebuilding.</div>
+    </div>
+    <div class="chapter-col">
+      <div class="chapter-col-num">V</div>
+      <div class="chapter-col-icon">🏘️</div>
+      <div class="chapter-col-title">Community Leadership</div>
+      <div class="chapter-col-body">Building leaders in every street, village, township, and rural area — voices of accountability, service delivery, and empowerment at grassroots.</div>
+    </div>
+    <div class="chapter-col">
+      <div class="chapter-col-num">VI</div>
+      <div class="chapter-col-icon">🎓</div>
+      <div class="chapter-col-title">Skills Academies</div>
+      <div class="chapter-col-body">Future academies across all provinces — technical skills, ICT, agriculture, business management, mining, arts, and entrepreneurship.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DECLARATION -->
+<section class="declaration-section">
+  <div class="declaration-bg-text">SOA</div>
+  <div class="declaration-inner reveal">
+    <div class="declaration-label">Our Declaration</div>
+    <div class="declaration-lines">
+      <span class="declaration-line">WE ARE</span>
+      <span class="declaration-line gold">SOIL OF AFRICA.</span>
+      <span class="declaration-line">NOT DIVIDED BY</span>
+      <span class="declaration-line">RACE, TRIBE,</span>
+      <span class="declaration-line">OR HISTORY.</span>
+      <span class="declaration-line italic">"United by the soil beneath our feet."</span>
+    </div>
+    <div class="declaration-divider"></div>
+    <p class="declaration-tagline">We are the guardians of Mother Africa. We are the protectors of her minerals, her children, her dignity, and her future. The soil remembers all of us.</p>
+  </div>
+</section>
+
+<!-- STAND -->
+<section class="stand-section">
+  <div class="section-masthead reveal">
+    <div class="section-masthead-title">Where We Stand</div>
+    <div class="section-masthead-rule"></div>
+    <div class="section-masthead-sub">Our position, clearly stated.</div>
+  </div>
+  <div class="stand-grid reveal">
+    <div class="stand-col no">
+      <div class="stand-header">WE SAY<br>NO TO</div>
+      <div class="stand-items">
+        <div class="stand-item"><span class="stand-marker">✕</span>Farm killings and violence against any community</div>
+        <div class="stand-item"><span class="stand-marker">✕</span>Criminal violence and political violence</div>
+        <div class="stand-item"><span class="stand-marker">✕</span>Tribal conflict and xenophobia</div>
+        <div class="stand-item"><span class="stand-marker">✕</span>Racism in any form or direction</div>
+        <div class="stand-item"><span class="stand-marker">✕</span>Gender-Based Violence</div>
+        <div class="stand-item"><span class="stand-marker">✕</span>Corruption and exploitation</div>
+        <div class="stand-item"><span class="stand-marker">✕</span>Community division and hatred</div>
+      </div>
+    </div>
+    <div class="stand-col yes">
+      <div class="stand-header" style="color:var(--green)">WE STAND<br>FOR</div>
+      <div class="stand-items">
+        <div class="stand-item"><span class="stand-marker">✓</span>Protection of farmers, workers, and all communities</div>
+        <div class="stand-item"><span class="stand-marker">✓</span>United communities across all races</div>
+        <div class="stand-item"><span class="stand-marker">✓</span>Empowerment of women and youth</div>
+        <div class="stand-item"><span class="stand-marker">✓</span>Honour of traditional leaders</div>
+        <div class="stand-item"><span class="stand-marker">✓</span>African-owned businesses and resources</div>
+        <div class="stand-item"><span class="stand-marker">✓</span>Protection of the land and natural wealth</div>
+        <div class="stand-item"><span class="stand-marker">✓</span>Peace, justice, and reconciliation for all</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="leadership-section">
+  <div class="section-masthead reveal">
+    <div class="section-masthead-title">Executive Team</div>
+    <div class="section-masthead-rule"></div>
+    <div class="section-masthead-sub">Those who lead the way</div>
+  </div>
+  <div class="leadership-roll reveal">
+    <div class="leader">
+      <div class="leader-ornament">I</div>
+      <div class="leader-role">President</div>
+      <div class="leader-name">HRM King Tshepo III Ramontja</div>
+    </div>
+    <div class="leader">
+      <div class="leader-ornament">II</div>
+      <div class="leader-role">Group Chief Executive Officer</div>
+      <div class="leader-name">Mrs. Rebone Ramontja</div>
+    </div>
+    <div class="leader">
+      <div class="leader-ornament">III</div>
+      <div class="leader-role">Deputy President</div>
+      <div class="leader-name">Mr. Moses Mashoene</div>
+    </div>
+    <div class="leader">
+      <div class="leader-ornament">IV</div>
+      <div class="leader-role">National Secretary General</div>
+      <div class="leader-name">Ms. Nwabisa Sigaba</div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join-section" id="join">
+  <div class="join-bg-text">RISE</div>
+  <div class="join-inner reveal">
+    <div class="join-label">Join the Movement</div>
+    <h2 class="join-title">THE SOIL<br>REMEMBERS<br>ALL OF US.</h2>
+    <p class="join-sub">Africa shall rise through unity, discipline, wisdom, innovation, spirituality, and ownership. Be part of the generation that defends Mother Africa.</p>
+    <a href="mailto:info@soilofafrica.org" class="btn-ink">Get in Touch</a>
+    <a href="tel:+27000000000" class="btn-outline-ink">Call Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-masthead">
+    <div class="footer-title">SOIL OF AFRICA</div>
+    <div class="footer-subtitle">"From the Soil We Came, and Through Unity We Rise."</div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>About</h4>
+      <p>Pan-African, Human Rights & Socio-Economic Development Organisation of South Africa. Registered PBO. Spiritually guided, professionally structured.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Organisation</h4>
+      <ul>
+        <li>Our Philosophy</li>
+        <li>Chapters</li>
+        <li>Leadership</li>
+        <li>Future Projects</li>
+        <li>Join Us</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Head Office</h4>
+      <ul>
+        <li>679 Tanya Street</li>
+        <li>Moreleta Park</li>
+        <li>Pretoria, Gauteng</li>
+        <li>South Africa</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Registration</h4>
+      <ul>
+        <li>IT Ref: 97475522199</li>
+        <li>PBO No: 930066493</li>
+        <li>&nbsp;</li>
+        <li>info@soilofafrica.org</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Soil of Africa. All rights reserved.</div>
+    <div class="footer-pbo">The Soil Remembers All of Us.</div>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
