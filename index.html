@@ -973,12 +973,73 @@ footer {
   </div>
 </footer>
 
+<style>
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+#lightbox.open { display: flex; }
+#lightbox img {
+  max-width: 92vw; max-height: 92vh;
+  object-fit: contain; border-radius: 2px;
+  box-shadow: 0 8px 60px rgba(0,0,0,0.6);
+  cursor: default;
+}
+#lightbox-close {
+  position: fixed; top: 1.25rem; right: 1.5rem;
+  font-size: 2rem; color: #fff; cursor: pointer;
+  line-height: 1; opacity: 0.75; transition: opacity 0.2s;
+  background: none; border: none; padding: 0;
+}
+#lightbox-close:hover { opacity: 1; }
+#lightbox-caption {
+  position: fixed; bottom: 1.5rem; left: 0; right: 0;
+  text-align: center; color: rgba(255,255,255,0.7);
+  font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.photo-mosaic-item { cursor: zoom-in; }
+</style>
+
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
 <script>
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.06 });
 reveals.forEach(r => observer.observe(r));
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightbox-img');
+const lbCaption = document.getElementById('lightbox-caption');
+
+document.querySelectorAll('.photo-mosaic-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    const caption = item.querySelector('.photo-caption-overlay');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.textContent = caption ? caption.textContent : '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  lbImg.src = '';
+}
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
